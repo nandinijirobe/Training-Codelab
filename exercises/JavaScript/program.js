@@ -6,11 +6,11 @@ window.onload = function() {
 }
 
 // implement changeColorBlue
-window.changeColorBlue() = function() {
+window.changeColorBlue = function() {
     body.style.backgroundColor = "#a8ceff";
 }
 
 // implement changeColorRed
-window.changeColorRed() = function() {
-    body.style.backgroundColor = "#c3b1e1";
+window.changeColorRed = function() {
+    body.style.backgroundColor = "#FF0000";
 }
