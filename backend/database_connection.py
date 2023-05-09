@@ -1,7 +1,11 @@
+import sqlite3
 from sqlite3 import Error
 from constants import TABLE_NAME
 from bitcoin_timestamp import BitcoinTimestamp
 from custom_util import create_database
+
+DATABASE_NAME = 'BitcoinDB-demo.db'
+TABLE_NAME = 'Bitcoin'
 
 class DatabaseConnection:
 
@@ -57,7 +61,8 @@ class DatabaseConnection:
         """
         try:
             output = []
-            
+            db = sqlite3.connect(DATABASE_NAME) 
+
             # TODO (5.3.1)
             # get cursor
             
