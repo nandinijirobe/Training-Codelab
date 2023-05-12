@@ -7,6 +7,7 @@ from custom_util import create_database
 DATABASE_NAME = 'BitcoinDB-demo.db'
 TABLE_NAME = 'Bitcoin'
 
+# We are creating a DatabaseConnection class here
 class DatabaseConnection:
 
     def __init__(self):
@@ -38,14 +39,19 @@ class DatabaseConnection:
         try:
             # TODO (5.3.2)  
             # insert sql query
+            sql = f"INSERT INTO {TABLE_NAME} (timestamp, price) VALUES (?, ?)"
+            VALUES = (bitcoin.timestamp, bitcoin.price)
 
             # execute sql query
+            cursor.execute(sql, VALUES)
 
             # commit to db
+            self.__db.commit()
 
             # close
-
+            cursor.close()
             return True
+        
         except Exception as e:
             print(e)
             return False
@@ -61,23 +67,29 @@ class DatabaseConnection:
         """
         try:
             output = []
-            db = sqlite3.connect(DATABASE_NAME) 
+            # db = sqlite3.connect(DATABASE_NAME) 
 
             # TODO (5.3.1)
             # get cursor
+            cursor = self.__db.cursor()
             
-            
-            # insert sql query
-             
+            # get sql query
+            sql =  "SELECT * FROM '{}';".format(TABLE_NAME)
+            # this returns an array of tuples. Each tuple will be a single row from the table
 
             # execute sql query
-           
+            cursor.execute(sql)
 
             # fetch all results obtained
-            
-            # close
+            results = cursor.fetchall()
 
-            # convert results to BitcoinTimestamp objects and append to output
+            for i in results:
+                newDBO = BitcoinTimestamp(i[0], i[1])
+                print(newDBO)
+                output.append(newDBO)
+
+            # close
+            cursor.close()
 
             return output
         except Error as e:

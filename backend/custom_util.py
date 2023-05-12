@@ -43,7 +43,8 @@ def create_database():
 
     # connects to the database if it exists, if not then creates a new database
     try:
-        db = sqlite3.connect(DATABASE_NAME)
+        # db = sqlite3.connect(DATABASE_NAME)
+        db = sqlite3.connect(DATABASE_NAME, check_same_thread=False)
     except Error as e:
         print(e)
 
@@ -92,3 +93,4 @@ def convert_date_to_text(date: datetime):
 
 if __name__ == '__main__':
     create_database()
+    get_live_bitcoin_price()

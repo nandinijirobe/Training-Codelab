@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import TestButton from "../Components/TestButton";
 import styles from "./Home.module.css"
 
@@ -8,7 +8,7 @@ function Home () {
 
   //  excercise 9.3
   // set variables [message, setMessage] using hooks (useState) to "you choose 1"
-  const [message, setMessage] = useState("You Choose 1");
+  const [message, setMessage] = useState("You Choose 1")
 
   //  excercise 9.3 update message when chosen change ( set dependecy to chosen) 
   /* uncomment for excercise 9.3 */
@@ -27,7 +27,7 @@ function Home () {
         <div className={styles.innerBodyContainer}>
           {chosen}
            <TestButton chosen={chosen} changeChosen={changeChosen}/>
-          {{message}}
+          {message}
         </div>
       </div>
   );
