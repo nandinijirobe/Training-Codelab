@@ -24,6 +24,7 @@ function TimeCurrencyCard ({currency,showData}) {
     :rtype:
         CSS  Object
     */
+    console.log("Time Currency Card Function Called");
     const priceColor = (index) => {
         var currentPrice = showData[index].price
         var previousPrice;
@@ -67,45 +68,30 @@ function TimeCurrencyCard ({currency,showData}) {
         }
 
         if (currentPrice > previousPrice){
-            return "↑"
+            return " ⬆"
         } else if (previousPrice > currentPrice) {
-            return "↓"
+            return " ⬇"
         } else {
-            return "-"
+            return "‒"
         }
     }
     
-    // ToDo 10.2.3
-    // return (
-    //     <>
-    //     {/* reference for .map https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
-    //         {showData.map((d, index) => (
-    //             <>
-    //             {/* use {currency === 'USD' ? "$" : *other currency sign*} to set the currency notation  
-    //             reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator */}
-    //             </>
-    //         ))} 
-    //     </>      
-    // );
-
-    // d is each element in the showData array
+    // LIZA'S RETURN CODE
     return (
-        <>
-          {showData.map((d, index) => (
-            // d is a showData element
-            <div  className={priceColor(index)} key={index}>
-              <div className={styles.timeContainer}>
-                {d.timestamp}
-              </div>
-              <div  className={priceColor(index)}>
-                {currency === "USD" ? "$" : "₹"}
-                {d.price.toFixed(2)}
-              </div>
-              <div  className={priceColor(index)}>{arrowSign(index)}</div>
+        <div className = {styles.centerCards}>
+            <div style={{ padding: "24px", display: "flex", flexWrap: "wrap" }}>
+                {/* reference for .map https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map */}
+                {showData.map((d, index) => (
+                    <div className={styles.cardContainer} key={index}>
+                        {/* use {currency === 'USD' ? "$" : *other currency sign*} to set the currency notation  
+                    reference https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator */}
+                        <p className={priceColor(index)}>{currency === 'USD' ? "$" : "₹"} {d.price}{arrowSign(index)}</p>
+                        <p>{d.timestamp}</p>
+                    </div>
+                ))}
             </div>
-          ))}
-        </>
-      );
+        </div>
+    );
 
 }
 

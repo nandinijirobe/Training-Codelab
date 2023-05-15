@@ -1,9 +1,30 @@
-
+/* Liza's CSS code */
 .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    font-family: OCR A Std, monospace;
+    font-size: 48px;
 }
 
 .currencyButtonActive {
+    font-size: 25px;
+    font-family: OCR A Std, monospace;
+    background-color: #447255;
+    color: #f7f7f7;
+    border-color: #4395A8;
+    border-radius: 8px;
+    padding: 8px;
+    border: 0;
+
 }
 
 .currencyButtonDefault {
+    font-size: 25px;
+    font-family: OCR A Std, monospace;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 8px;
+    border: 0;
 }

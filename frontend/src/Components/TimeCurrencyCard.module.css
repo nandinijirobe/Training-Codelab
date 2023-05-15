@@ -1,19 +1,31 @@
+.centerCards{
+    margin-left: 90px;
+    margin-right:120px;
+}
 
 .cardContainer {
+    background-color:#4395A8;
+    font-weight:bold;
+    margin:10px;
+    padding:10px;
+    color:#65E2FF;
+    font-family: OCR A Std, monospace;
+    font-size:20px;
 }
 
 .priceContainerUp {
-    color:green
+    color: #B5E61D;
 }
 
 .priceContainerDown {
-    color:red
+    color: #ED1C24;
 }
 
 .priceContainerEqual {
-    color:white
+    color:#FDFFFC;
 }
 
 .timeContainer {
+    background-color: aquamarine;
 }
 

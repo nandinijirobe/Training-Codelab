@@ -11,10 +11,10 @@ import styles from "./CurrencyButton.module.css"
   function
 */
 function CurrencyButton ({currency,changeCurrency}) {
-  
+  console.log("Currency Button Function Called");
   // ToDo 10.1
   return (
-    <div>
+    <div className={styles.buttonContainer}>
        <button onClick = {()=>changeCurrency("USD")} 
         className = {currency === 'USD' ? styles.currencyButtonActive : styles.currencyButtonDefault}>
         USD</button>
