@@ -5,11 +5,12 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Home from "./Pages/Home";
+import Home from "./Pages/Home"; 
 
 class App extends Component {
   render () {
     return (
+      // UNCOMMENT LATER FOR BITCOIN WEBSITE
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home/>}/>

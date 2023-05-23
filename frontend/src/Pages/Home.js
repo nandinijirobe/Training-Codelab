@@ -3,6 +3,11 @@ import axios from "axios";
 import CurrencyButton from "../Components/CurrencyButton";
 import TimeCurrencyCard from "../Components/TimeCurrencyCard";
 import styles from "./Home.module.css"
+import FloatingButton from "../Components/FloatingButton";
+
+// new code added for the chat button
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 
 function Home () {
 
@@ -84,16 +89,23 @@ function Home () {
     setCurrency(currency)
   }
 
+
+
   // Welcome to the Bitcoin Tracking Website!
   // ToDo 10.3.5
   // call CurrencyButton and TimeCurrencyCard pass the variables
   return (
-      <div className = {styles.bodyContainer}>
+    <body className = {styles.bodyContainer}>
+      <div>
         <div className = {styles.webTitle}> 🪙Welcome to the Bitcoin Tracking Website!🪙</div>
         <img src = 'https://gifdb.com/images/file/animated-stash-of-money-qlhk99twu6ixul8n.gif' className="moneyGIF"></img>
         <CurrencyButton currency ={currency} changeCurrency={changeCurrency} />
         <TimeCurrencyCard currency={currency} showData={showData} />
+        <FloatingButton/>
       </div>
+    </body>
+
+
   );
 
 }
