@@ -17,6 +17,8 @@ async function main() {
 
   widget.hide();
 
+
+  // This is where we can hide and unhide the marker.io tool
   const showMarkerForm = () => {
     if (widgetShown === true) {
       console.log("hiding marker tool");
@@ -41,6 +43,7 @@ async function main() {
   reportWebVitals();
 }
 
+// This makes the entire app
 class App extends Component {
   render() {
     return (
