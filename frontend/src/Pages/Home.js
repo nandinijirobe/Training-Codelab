@@ -90,6 +90,8 @@ function Home () {
   }
 
 
+  // Button code
+  
 
   // Welcome to the Bitcoin Tracking Website!
   // ToDo 10.3.5
@@ -101,10 +103,8 @@ function Home () {
         <img src = 'https://gifdb.com/images/file/animated-stash-of-money-qlhk99twu6ixul8n.gif' className="moneyGIF"></img>
         <CurrencyButton currency ={currency} changeCurrency={changeCurrency} />
         <TimeCurrencyCard currency={currency} showData={showData} />
-        <FloatingButton/>
       </div>
     </body>
-
 
   );
 
